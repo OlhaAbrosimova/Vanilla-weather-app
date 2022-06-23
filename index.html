@@ -13,8 +13,33 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>Hello World</h1>
-			<button class="btn btn-primary" type="submit">Button</button>
+			<!-- class weather app - is border of all app -->
+			<div class="weather-app">
+				<button>Current geolocation</button>
+				<form>
+					<input type="text" placeholder="Type a city..." autocomplete="off" />
+					<input type="submit" value="Search" />
+				</form>
+
+				<div class="row">
+					<div class="col-6">
+						<h1>KYIV</h1>
+						<ul>
+							<li>Thursday, 13:12, cloudy</li>
+							<li>Humidity: 90%</li>
+							<li>Wind: 3,6 km/h</li>
+						</ul>
+					</div>
+					<div class="col-6">
+						<span>emojie</span>
+						<span>17</span>
+						<span>°C</span>
+						<span>°F</span>
+					</div>
+				</div>
+
+				<button class="btn btn-primary" type="submit">Button</button>
+			</div>
 		</div>
 		<script src="src/app.js"></script>
 	</body>
