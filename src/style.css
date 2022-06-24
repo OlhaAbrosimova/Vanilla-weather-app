@@ -5,20 +5,43 @@ body {
 }
 
 .weather-app {
-	border: 1px solid black;
+	margin-top: 30px;
+	border: 3px solid rgba(178, 253, 238, 0.96);
+	border-radius: 7px;
+	background: linear-gradient(
+		89.9deg,
+		rgba(178, 253, 238, 0.96) -8.1%,
+		rgb(207, 244, 254) 26.3%,
+		rgba(207, 244, 254, 0.48) 47.5%,
+		rgba(254, 219, 243, 0.63) 61.5%,
+		rgb(254, 219, 243) 78.7%,
+		rgb(254, 207, 210) 109.2%
+	);
 }
 
 .current-geo-btn {
+	color: #ad1fa2cc;
+	border: 0px solid #d887d1cc;
+	border-radius: 5px;
+	background-color: #d887d1cc;
 	margin: 20px 10px;
-	width: 28%;
+	width: 32%;
+	line-height: 200%;
 }
 
 .type-city-form {
+	border: 1px solid #d887d1cc;
+	border-radius: 4px;
 	margin: 0 0 0px 10px;
 	width: 70%;
 }
 
 .search-btn {
+	color: #ad1fa2cc;
+	font-weight: bold;
+	background-color: white;
+	border: 1px solid #d887d1cc;
+	border-radius: 4px;
 	width: 26%;
 	margin-right: 0px;
 }
@@ -62,4 +85,8 @@ h1 {
 
 .forecast {
 	text-align: center;
+}
+
+.night-degree {
+	color: grey;
 }
