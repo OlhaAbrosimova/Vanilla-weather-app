@@ -59,19 +59,20 @@ h1 {
 	font-size: 13px;
 }
 
-.base-emojie {
-	font-size: 70px;
-	color: rgb(255, 196, 0);
+.weather-temperature img {
+	margin-right: 5px;
+	height: 64px;
+	width: 64px;
 	position: relative;
-	bottom: 15px;
+	bottom: 30px;
 }
 
 .base-temperature {
 	margin-top: 0px;
 	padding-top: 0px;
-	font-size: 120px;
-	position: relative;
-	bottom: 5px;
+	font-size: 100px;
+	/* position: relative;
+	bottom: 5px; */
 
 	font-weight: 200px;
 }
@@ -79,8 +80,9 @@ h1 {
 .celsius,
 .farenheit {
 	position: relative;
-	top: -74px;
-	font-size: 20px;
+	top: -59px;
+	font-size: 16px;
+	
 }
 
 .forecast {
