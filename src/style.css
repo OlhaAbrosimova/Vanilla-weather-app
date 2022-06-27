@@ -58,7 +58,13 @@ h1 {
 	padding-left: 0px;
 	font-size: 13px;
 }
-
+.base-temp-block {
+	margin-left: -12;
+	margin-right: 0;
+}
+.weather-temperature {
+	text-align: right;
+}
 .weather-temperature img {
 	margin-right: 5px;
 	height: 64px;
@@ -82,7 +88,6 @@ h1 {
 	position: relative;
 	top: -59px;
 	font-size: 16px;
-	
 }
 
 .forecast {
