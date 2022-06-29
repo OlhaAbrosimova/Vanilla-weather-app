@@ -97,3 +97,20 @@ h1 {
 .night-degree {
 	color: grey;
 }
+
+.weather-temperature .active {
+	color: black;
+	cursor: default;
+	text-decoration: none;
+}
+
+.weather-temperature .active2 {
+	text-decoration: none;
+}
+.weather-temperature .active:hover {
+	text-decoration: none;
+}
+
+.git {
+	color: black;
+}

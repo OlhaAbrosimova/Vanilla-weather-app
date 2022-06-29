@@ -25,7 +25,9 @@ function formatDate(timestamp) {
 
 function displayTemperature(response) {
 	let temperatureElement = document.querySelector("#base-temperature");
-	temperatureElement.innerHTML = Math.round(response.data.main.temp);
+
+	celsiusTemperature = response.data.main.temp;
+	temperatureElement.innerHTML = Math.round(celsiusTemperature);
 	let cityElement = document.querySelector("#city");
 	cityElement.innerHTML = response.data.name;
 	let descriptionElement = document.querySelector("#description");
@@ -60,3 +62,28 @@ search("Kyiv");
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+function displayFarenheitTemperature(event) {
+	event.preventDefault();
+	let temperatureElement = document.querySelector("#base-temperature");
+	celsiusLink.classList.remove("active");
+	farenheitLink.classList.add("active");
+	let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+	temperatureElement.innerHTML = Math.round(farenheitTemperature);
+}
+
+let celsiusTemperature = null;
+
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", displayFarenheitTemperature);
+
+function displayCelsiusTemperature(event) {
+	event.preventDefault();
+	let temperatureElement = document.querySelector("#base-temperature");
+	celsiusLink.classList.add("active");
+	farenheitLink.classList.remove("active");
+
+	temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
