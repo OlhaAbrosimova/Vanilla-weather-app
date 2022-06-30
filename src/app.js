@@ -66,8 +66,8 @@ form.addEventListener("submit", handleSubmit);
 function displayFarenheitTemperature(event) {
 	event.preventDefault();
 	let temperatureElement = document.querySelector("#base-temperature");
-	celsiusLink.classList.remove("active");
-	farenheitLink.classList.add("active");
+	celsiusLink.classList.remove(`active`);
+	farenheitLink.classList.add(`active`);
 	let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
 	temperatureElement.innerHTML = Math.round(farenheitTemperature);
 }
@@ -80,8 +80,8 @@ farenheitLink.addEventListener("click", displayFarenheitTemperature);
 function displayCelsiusTemperature(event) {
 	event.preventDefault();
 	let temperatureElement = document.querySelector("#base-temperature");
-	celsiusLink.classList.add("active");
-	farenheitLink.classList.remove("active");
+	celsiusLink.classList.add(`active`);
+	farenheitLink.classList.remove(`active`);
 
 	temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
