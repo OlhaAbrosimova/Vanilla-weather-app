@@ -87,3 +87,41 @@ function displayCelsiusTemperature(event) {
 }
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+// current geolocation
+function retrievePosition(position) {
+	let latitude = position.coords.latitude;
+	let longitude = position.coords.longitude;
+	let apiKey = "a2e58143d5353df7726302c2856b0fb6";
+	let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather";
+	let units = "metric";
+	let apiUrl = `${apiEndPoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+
+	axios.get(apiUrl).then(showCurrentWeather);
+}
+
+function showCurrentWeather(response) {
+	let curCity = response.data.name;
+	let city = document.querySelector("#city");
+	city.innerHTML = `${curCity}`;
+
+	let curTemperature = Math.round(response.data.main.temp);
+	let temperature = document.querySelector("#base-temperature");
+	temperature.innerHTML = `${curTemperature}`;
+
+	let curHumidity = response.data.main.humidity;
+	let humidity = document.querySelector("#humidity");
+	humidity.innerHTML = `${curHumidity}`;
+
+	let curWind = response.data.wind.speed.toFixed(1);
+	let wind = document.querySelector("#wind-speed");
+	wind.innerHTML = `${curWind}`;
+}
+
+function getPosition(event) {
+	event.preventDefault();
+	navigator.geolocation.getCurrentPosition(retrievePosition);
+}
+
+let currentGeo = document.querySelector("#current-geo");
+currentGeo.addEventListener("click", getPosition);
