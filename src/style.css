@@ -88,6 +88,7 @@ h1 {
 	position: relative;
 	top: -59px;
 	font-size: 16px;
+	text-decoration: none;
 }
 
 .forecast {
@@ -101,13 +102,6 @@ h1 {
 .weather-temperature .active {
 	color: black;
 	cursor: default;
-	text-decoration: none;
-}
-
-.active2 {
-	text-decoration: none;
-}
-.weather-temperature .active:hover {
 	text-decoration: none;
 }
 
