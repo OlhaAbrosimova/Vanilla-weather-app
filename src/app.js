@@ -153,6 +153,14 @@ function retrievePosition(position) {
 	axios.get(apiUrl).then(displayTemperature);
 }
 
+function getPosition(event) {
+	event.preventDefault();
+	navigator.geolocation.getCurrentPosition(retrievePosition);
+}
+
+let currentGeo = document.querySelector("#current-geo");
+currentGeo.addEventListener("click", getPosition);
+
 // function showCurrentWeather(response) {
 // 	let curCity = response.data.name;
 // 	let city = document.querySelector("#city");
@@ -170,11 +178,3 @@ function retrievePosition(position) {
 // 	let wind = document.querySelector("#wind-speed");
 // 	wind.innerHTML = `${curWind}`;
 // }
-
-function getPosition(event) {
-	event.preventDefault();
-	navigator.geolocation.getCurrentPosition(retrievePosition);
-}
-
-let currentGeo = document.querySelector("#current-geo");
-currentGeo.addEventListener("click", getPosition);
