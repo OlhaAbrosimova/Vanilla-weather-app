@@ -28,14 +28,23 @@ body {
 	width: 32%;
 	line-height: 200%;
 }
-
 .type-city-form {
 	border: 1px solid #d887d1cc;
 	border-radius: 4px;
 	margin: 0 0 0px 10px;
 	width: 70%;
+	padding-left: 8px;
 }
 
+.type-city-form:focus-within {
+	background: #dfaadacc;
+	color: black;
+	outline: none;
+}
+/* .type-city-form,
+.search-btn {
+	height: 40px;
+} */
 .search-btn {
 	color: #ad1fa2cc;
 	font-weight: bold;
@@ -46,21 +55,31 @@ body {
 	margin-right: 0px;
 }
 
+.search-btn:hover {
+	background-color: #d887d1cc;
+}
 h1 {
 	margin-left: 10px;
-	margin-top: 30px;
+
 	font-size: 50px;
 }
 
 .weather-metrics {
 	list-style: none;
 	margin-left: 10px;
+	margin-bottom: 0px;
 	padding-left: 0px;
 	font-size: 13px;
 }
+
+.city-flex {
+	padding-top: 13px;
+	display: flex;
+	align-items: left;
+	flex-direction: column;
+}
 .base-temp-block {
-	margin-left: -12;
-	margin-right: 0;
+	margin: 17px 15px 17px;
 }
 .weather-temperature {
 	text-align: right;
@@ -105,13 +124,10 @@ h1 {
 	text-decoration: none;
 }
 
-.git {
-	color: black;
-}
-
 .weather-forecast {
 	margin-top: 20px;
 	text-align: center;
+	margin-bottom: 15px;
 }
 
 .weather-forecast-date {
@@ -123,4 +139,8 @@ h1 {
 .weather-forecast-temp-min {
 	color: black;
 	opacity: 0.5;
+}
+
+.git {
+	color: black;
 }
