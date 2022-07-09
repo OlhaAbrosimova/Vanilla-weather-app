@@ -30,7 +30,6 @@ function formatDay(timestamp) {
 	return days[day];
 }
 function displayForecast(response) {
-	
 	let forecast = response.data.daily;
 	let forecastElement = document.querySelector("#forecast");
 
@@ -115,31 +114,6 @@ search("Kyiv");
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-function displayFarenheitTemperature(event) {
-	event.preventDefault();
-	let temperatureElement = document.querySelector("#base-temperature");
-	celsiusLink.classList.remove(`active`);
-	farenheitLink.classList.add(`active`);
-	let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-	temperatureElement.innerHTML = Math.round(farenheitTemperature);
-}
-
-let celsiusTemperature = null;
-
-let farenheitLink = document.querySelector("#farenheit-link");
-farenheitLink.addEventListener("click", displayFarenheitTemperature);
-
-function displayCelsiusTemperature(event) {
-	event.preventDefault();
-	let temperatureElement = document.querySelector("#base-temperature");
-	celsiusLink.classList.add(`active`);
-	farenheitLink.classList.remove(`active`);
-
-	temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
 // current geolocation
 function retrievePosition(position) {
 	let latitude = position.coords.latitude;
@@ -160,21 +134,3 @@ function getPosition(event) {
 
 let currentGeo = document.querySelector("#current-geo");
 currentGeo.addEventListener("click", getPosition);
-
-// function showCurrentWeather(response) {
-// 	let curCity = response.data.name;
-// 	let city = document.querySelector("#city");
-// 	city.innerHTML = `${curCity}`;
-
-// 	let curTemperature = Math.round(response.data.main.temp);
-// 	let temperature = document.querySelector("#base-temperature");
-// 	temperature.innerHTML = `${curTemperature}`;
-
-// 	let curHumidity = response.data.main.humidity;
-// 	let humidity = document.querySelector("#humidity");
-// 	humidity.innerHTML = `${curHumidity}`;
-
-// 	let curWind = response.data.wind.speed.toFixed(1);
-// 	let wind = document.querySelector("#wind-speed");
-// 	wind.innerHTML = `${curWind}`;
-// }
